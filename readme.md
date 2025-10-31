@@ -1,7 +1,7 @@
-🕊️ Esperança Viva — Plataforma Web para ONGs v3
+🕊️ Esperança Viva — Plataforma Web para ONGs v4
 📘 Descrição
 
-A Esperança Viva é uma plataforma web fictícia desenvolvida como parte da Experiência Prática III da disciplina de Desenvolvimento Front-End.
+A Esperança Viva é uma plataforma web fictícia desenvolvida como parte da Experiência Prática IV da disciplina de Desenvolvimento Front-End.
 O projeto tem como objetivo aplicar os conceitos de HTML5 semântico, responsividade e formulários interativos, criando uma base sólida para o desenvolvimento completo de um sistema web voltado a Organizações Não Governamentais (ONGs).
 
 A ONG “Esperança Viva” atua no combate à fome e inclusão social, promovendo solidariedade, dignidade e transformação por meio de ações comunitárias.
@@ -17,30 +17,38 @@ Apresentem seus projetos sociais;
 Captem voluntários e doadores;
 
 Tenham presença digital acessível e profissional.
-🧩 Estrutura do Projeto v3
+🧩 Estrutura do Projeto v4
 /esperanca-viva
 │
-├── css/
-│   └── style.css           # Arquivo principal de estilos (Design System, layout, responsividade)
+├── /css                # Pasta para os arquivos de estilo CSS
+│   └── style.css       # Arquivo de estilo principal do projeto
 │
-├── imagens/
-│   ├── cadastro.jpg        # Imagem usada na página de cadastro
-│   ├── comunidade.jpg      # Imagem ilustrativa da comunidade
-│   ├── logo.png            # Logotipo da ONG
-│   ├── projeto1.jpg        # Imagem do projeto (ex: Mesa Cheia)
-│   └── voluntarios.jpg     # Imagem de voluntários
+├── /dist               # Pasta para arquivos de distribuição, como a versão minificada
+│   └── app.min.js      # Arquivo JavaScript minificado para produção
 │
-├── js/
-│   ├── app.js              # Script principal (inicialização SPA, manipulação geral do DOM)
-│   ├── form.js             # Validação e manipulação dos formulários
-│   ├── router.js           # Gerenciamento de rotas e navegação SPA
-│   ├── storage.js          # Funções para armazenar e recuperar dados do localStorage
-│   └── templates.js        # Templates JavaScript para renderizar o conteúdo dinamicamente
+├── /imagens            # Pasta para armazenar imagens utilizadas no site
+│   ├── cadastro.jpg    # Imagem usada na página de cadastro
+│   ├── comunidade.jpg  # Imagem usada na seção "Quem Somos"
+│   ├── logo.png        # Logotipo da ONG
+│   ├── projeto1.jpg    # Imagem do projeto
+│   └── voluntarios.jpg # Imagem de voluntários
 │
-├── cadastro.html           # Página do formulário de cadastro
-├── index.html              # Página principal da SPA
-├── projetos.html           # Página com os projetos sociais
-├── readme.md               # Documentação do projeto (este arquivo)
+├── /js                 # Pasta para os arquivos JavaScript do projeto
+│   ├── app.js          # Lógica principal de funcionamento do site (Menu Hamburguer, SPA)
+│   ├── form.js         # Script de validação e envio do formulário de cadastro
+│   ├── router.js       # Lógica para roteamento e troca de páginas na SPA
+│   ├── storage.js      # Gerenciamento do armazenamento local (LocalStorage)
+│   └── templates.js    # Templates de HTML usados para renderizar as páginas
+│
+├── /node_modules       # Pasta com dependências do Node.js (caso você use pacotes npm)
+│
+├── cadastro.html       # Página HTML de cadastro
+├── index.html          # Página inicial (home) do projeto
+├── package-lock.json   # Arquivo de bloqueio de versões de pacotes (usado com npm)
+├── package.json        # Arquivo de configuração do npm, com dependências do projeto
+├── projetos.html       # Página HTML que detalha os projetos da ONG
+└── README.md           # Arquivo de documentação do projeto, contendo informações sobre o projeto e como utilizá-lo
+
 
 🖥️ Páginas Desenvolvidas
 
@@ -59,21 +67,41 @@ Página com formulário para cadastro de voluntários e doadores, contendo campo
 
 🧠 Tecnologias Utilizadas
 
-css/style.css: Contém os estilos CSS do projeto, incluindo o design system, cores, tipografia, responsividade e menu hamburger para dispositivos móveis.
+HTML5: Estrutura do conteúdo da web.
 
-imagens/: Todas as imagens usadas no site para dar suporte visual e identidade, organizadas em arquivos nomeados de forma clara.
+CSS3: Estilização e layout responsivo.
 
-js/app.js: Ponto de entrada para o JavaScript. Gerencia a inicialização da SPA, eventos globais e integração entre módulos.
+JavaScript: Funcionalidade interativa e SPA (Single Page Application).
 
-js/form.js: Responsável por validar formulários, aplicar regras de consistência e fornecer feedback ao usuário em caso de dados incorretos.
+Git/GitHub: Controle de versão e colaboração no código.
 
-js/router.js: Controla a navegação no estilo SPA, carregando dinamicamente o conteúdo baseado na rota solicitada, evitando recarregamentos da página.
+GitFlow: Estratégia de branching para facilitar o gerenciamento de branches de funcionalidades, releases e hotfixes.
 
-js/storage.js: Módulo para manipulação do armazenamento local (localStorage), para salvar dados do usuário e manter estado da aplicação.
+🖥️ Descrição dos principais diretórios e arquivos:
 
-js/templates.js: Define templates JavaScript para montar dinamicamente o conteúdo das páginas, facilitando a renderização e atualização sem recarregar a página.
+/css/style.css: Este arquivo contém os estilos do projeto. Ele é responsável pela aparência do site, incluindo layout, cores, fontes e outros aspectos visuais.
 
-index.html, projetos.html, cadastro.html: Como exemplo acima, páginas que compõem a aplicação e integradas via SPA para carregamento dinâmico de conteúdo.
+/dist/app.min.js: Arquivo JavaScript minificado utilizado em produção, otimizando o desempenho. Contém a versão compactada do código JavaScript do projeto.
+
+/imagens/: Contém todas as imagens utilizadas no projeto, como logotipo da ONG, fotos de voluntários e outras imagens relacionadas aos projetos da ONG.
+
+/js/: Contém todos os scripts JavaScript do projeto:
+
+app.js: Lógica principal que controla a interação do site, como o menu hamburguer e a funcionalidade de Single Page Application (SPA).
+
+form.js: Lógica de validação e envio do formulário de cadastro.
+
+router.js: Lida com o roteamento das páginas na aplicação SPA, carregando o conteúdo dinamicamente.
+
+storage.js: Gerencia a utilização do LocalStorage para salvar os cadastros e dados de forma persistente no navegador.
+
+templates.js: Contém os templates HTML para renderizar as diferentes seções do site, como home, projetos, e cadastro.
+
+cadastro.html, index.html, projetos.html: São as páginas HTML do projeto. Cada uma dessas páginas representa uma seção diferente do site (exemplo: cadastro de voluntários, página inicial, projetos da ONG).
+
+README.md: Arquivo de documentação que descreve o projeto, como configurá-lo, tecnologias utilizadas, como contribuir e outros detalhes importantes sobre o desenvolvimento e uso do projeto.
+
+package.json e package-lock.json: Arquivos de configuração do npm. O package.json contém as dependências e informações sobre o projeto, enquanto o package-lock.json garante que as dependências sejam instaladas na mesma versão para todos os desenvolvedores.
 
 🧱 Recursos Técnicos e Boas Práticas
 
@@ -85,7 +113,7 @@ index.html, projetos.html, cadastro.html: Como exemplo acima, páginas que comp�
 
 Baixe ou clone o repositório:
 
-git clone https://github.com/DiegoBatina/Projeto-v3
+git clone https://github.com/DiegoBatina/Projeto-v4
 
 
 Abra o arquivo principal:
