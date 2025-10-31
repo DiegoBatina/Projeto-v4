@@ -1,0 +1,266 @@
+/* =========================================
+   🎨 DESIGN SYSTEM
+   ========================================= */
+:root {
+  --color-primary: #2563eb;
+  --color-primary-light: #3b82f6;
+  --color-primary-dark: #1e40af;
+  --color-secondary: #f59e0b;
+  --color-neutral-100: #ffffff;
+  --color-neutral-200: #f9fafb;
+  --color-neutral-400: #d1d5db;
+  --color-neutral-600: #4b5563;
+  --color-neutral-900: #111827;
+  --font-family-base: 'Inter', Arial, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 2rem;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 48px;
+  --space-6: 64px;
+}
+
+/* =========================================
+   🔤 ESTILOS BÁSICOS
+   ========================================= */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-md);
+  color: var(--color-neutral-900);
+  background-color: var(--color-neutral-200);
+  line-height: 1.6;
+}
+
+a {
+  cursor: pointer;
+}
+
+/* =========================================
+   🧭 CABEÇALHO E NAVEGAÇÃO
+   ========================================= */
+header {
+  background-color: var(--color-primary);
+  color: var(--color-neutral-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  position: relative;
+  z-index: 1000;
+}
+
+header img {
+  max-width: 200px;
+  height: auto;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--space-3);
+}
+
+nav a {
+  color: var(--color-neutral-100);
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--color-secondary);
+}
+
+/* Hamburger */
+.hamb {
+  display: none;
+  cursor: pointer;
+  padding: var(--space-2);
+}
+
+.hamb-line {
+  background: var(--color-neutral-100);
+  display: block;
+  height: 2px;
+  position: relative;
+  width: 24px;
+}
+
+.hamb-line::before,
+.hamb-line::after {
+  background: var(--color-neutral-100);
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all 0.2s ease-out;
+  width: 100%;
+}
+
+.hamb-line::before {
+  top: 5px;
+}
+
+.hamb-line::after {
+  top: -5px;
+}
+
+.side-menu {
+  display: none;
+}
+
+/* =========================================
+   🧱 CONTEÚDO PRINCIPAL
+   ========================================= */
+main {
+  width: 90%;
+  max-width: 1200px;
+  margin: var(--space-5) auto;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--space-4);
+}
+
+section {
+  grid-column: span 12;
+  background-color: var(--color-neutral-100);
+  padding: var(--space-4);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-bottom: var(--space-4);
+}
+
+section h2 {
+  font-size: var(--font-size-xl);
+  color: var(--color-primary-dark);
+  margin-bottom: var(--space-3);
+}
+
+section img {
+  max-width: 100%;
+  border-radius: 8px;
+  margin-bottom: var(--space-3);
+}
+
+article {
+  margin-bottom: var(--space-3);
+}
+
+article h3 {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+}
+
+/* Formulário */
+form label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 600;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"] {
+  width: 100%;
+  padding: 8px 12px;
+  margin-bottom: var(--space-2);
+  border: 1px solid var(--color-neutral-400);
+  border-radius: 4px;
+}
+
+form button {
+  background-color: var(--color-primary);
+  color: var(--color-neutral-100);
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+form button:hover {
+  background-color: var(--color-primary-dark);
+}
+
+/* =========================================
+   ⚙️ RODAPÉ
+   ========================================= */
+footer {
+  background-color: var(--color-primary-dark);
+  color: var(--color-neutral-100);
+  text-align: center;
+  padding: var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+/* =========================================
+   📱 RESPONSIVIDADE
+   ========================================= */
+@media (max-width: 768px) {
+  .hamb {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    background: var(--color-primary-dark);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 8px 8px;
+    overflow: hidden;
+  }
+
+  nav ul.open {
+    display: flex;
+  }
+
+  nav ul li {
+    padding: var(--space-2) 0;
+  }
+
+  header {
+    justify-content: space-between;
+  }
+
+  main {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  section {
+    grid-column: span 6;
+  }
+}
+
+@media (max-width: 576px) {
+  main {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  section {
+    grid-column: span 4;
+  }
+}
+
+@media (max-width: 400px) {
+  header img {
+    max-width: 140px;
+  }
+}
